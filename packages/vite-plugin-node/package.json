@@ -37,7 +37,7 @@
   },
   "peerDependencies": {
     "@swc/core": "^1.2.153",
-    "vite": "^2.9.8"
+    "vite": "^4.0.3"
   },
   "peerDependenciesMeta": {
     "@swc/core": {
