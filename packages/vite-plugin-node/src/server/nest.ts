@@ -2,9 +2,8 @@ import type { INestApplication } from '@nestjs/common';
 import type { RequestAdapter } from '..';
 
 export const NestHandler: RequestAdapter<INestApplication> = async ({ app, req, res }) => {
-  if (!app.isInitialized) {
+  if (!(<any>app).isInitialized)
     await app.init();
-  }
   const instance = app.getHttpAdapter().getInstance();
 
   // Todo: handle nest-fastify case

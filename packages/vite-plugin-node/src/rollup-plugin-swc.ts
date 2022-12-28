@@ -18,7 +18,7 @@ export function RollupPluginSwc(options: Options): Plugin {
     async transform(code, id) {
       if (filter(id) || filter(cleanUrl(id))) {
         if (!swc)
-          swc = await import('@swc/core');
+          swc = <any>(await import('@swc/core'));
 
         const result = await swc.transform(code, {
           ...config,
